@@ -1,1 +1,90 @@
+:root {
+	--ultramarine-blue_10:hsla(235, 70%, 60%, 0.1);
+	--ultramarine-blue: hsl(235, 70%, 60%);
+	--fs-3:1.3rem;
+	--fs-5:1.5rem;
+	--fw-300:300;
+	--radius-15:15px;
+	--transition-1:0.25s ease;
+	--white: hsl(0, 0%, 100%);
+	--cultured-2:hsl(0, 0%, 93%);
+}
 
+.wrap {
+	margin-left: 30px;
+}
+
+.item {
+	padding: 5px;
+}
+
+.line {
+	width: 320px;
+	height: 2px;
+	margin: 20px 0;
+	background: rgba(97, 116, 179, 0.5);
+}
+
+.btn {
+	min-height: 20xp;
+	max-width: max-content;
+	font-size: var(--fs-5);
+	font-weight: var(--fw-300);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 5px 15px;
+	margin-left: 10px;
+	border-radius: var(--radius-15);
+	transition: var(--transition-1);
+	background-color: var(--ultramarine-blue);
+	color: var(--white);
+	text-decoration: none;
+}
+
+.span {
+	display: block;
+	font-size: 20px;
+}
+
+.btn-child {
+	display: inline-block;
+}
+
+.submit {
+	margin-top: 20px;
+}
+
+.hero-text {
+	border-radius: var(--radius-15);
+	padding: 20px;
+	max-width: 700px;
+	word-wrap: break-word;
+	font-size: var(--fs-3);
+	font-weight: var(--fw-300);
+	margin-block-end: 30px;
+	background-color: var(--cultured-2);
+}
+
+.item {
+	display: block;
+	position: relative;
+	transition: 0.5s;
+	border-radius: 6px;
+}
+
+.light {
+	width: 3px;
+	height: 100%;
+	background: var(--ultramarine-blue);
+	position: absolute;
+	left: -15px;
+	transition: 0.5s;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	opacity: 0;
+}
+
+.item:hover .light {
+	opacity: 1;
+}
