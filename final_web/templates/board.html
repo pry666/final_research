@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>监控系统</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <div class="light"></div>
+            <h1 class="title">Docker监控系统</h1>
+            <div>
+                <a href="/docker" target="_blank" class="btn">
+                    <span class="span">进入</span>
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="item">
+            <div class="light"></div>
+            <h1 class="title">Kubernetes监控系统</h1>
+            <div class="btn-child">
+                <a href="/gettoken" target="_blank" class="btn">
+                    <span class="span">获取token</span>
+                </a>
+            </div>
+            <div class="btn-child">
+                <a href="/kubernetes" target="_blank" class="btn">
+                    <span class="span">进入</span>
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="item">
+            <div class="light"></div>
+            <h1 class="title">pod配置文件上传</h1>
+            <!--将信息放到一个form中-->
+            <!--<form action="/mainboard" method="post" enctype="multipart/form-data">
+                <div class="btn-child">
+                    <input type="file" name="podconfigfile"  id="upload_file" style="display: none;">
+                <div class="btn" id="upload_btn" onclick="upload_btn()">
+                        <span class="span">上传文件</span>
+                    </div>
+                </div>
+                <div class="btn-child">
+                    <div class="btn submit" onclick="message()">
+                        <span type="submit">提交</span>
+                    </div>
+                </div>
+                <div class="hero-text">
+                {% if message %} {{message}} {% endif %} 
+            </div>
+            </form>-->
+            <form action="/mainboard" method="post" enctype="multipart/form-data">
+                <input type="file" name="podconfigfile" class="btn">
+                <br/>
+                <div class="btn-child">
+                <input type="submit" onclick = "message()" class="btn" value="提交" />
+                </div>
+                {% if message %} 
+                <div class="hero-text">
+                    {{message}} 
+                </div>{% endif %}
+            </form>
+
+        </div>
+    </div>
+    <script>
+        function upload_btn() {
+            var upload_action = document.getElementById("upload_file")
+            upload_action.click();
+        }
+        function message() {
+            alert("提交成功");
+        }
+    </script>
+</body>
+
+</html>

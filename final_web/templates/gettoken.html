@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <title>监控系统</title>
+    <link rel="stylesheet"  type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
     <div class="wrap">
         <div class="item">
             <div class="light"></div>
-            <h1 class="title">监控</h1>
-            <div>
-                <a href="{{ url_for('mainboard') }}" target="_blank" class="btn">
-                    <span class="span">进入</span>
-                </a>
+            <h1 class="title">token信息</h1>
+            <div class="hero-text">
+                {{tokenmessage}}
             </div>
         </div>
     </div>
 </body>
-
 </html>
+
