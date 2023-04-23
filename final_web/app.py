@@ -38,7 +38,7 @@ def gettoken():
 
 @app.route('/docker')
 def docker():
-    return redirect("http://www.baidu.com")
+    return redirect("http://106.75.100.186:3000")
 
 @app.route('/kubernetes')
 def kubernetes():
